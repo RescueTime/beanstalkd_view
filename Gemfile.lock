@@ -65,11 +65,23 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.21)
+<<<<<<< HEAD
     multi_json (1.15.0)
     nokogiri (1.5.8)
     polyglot (0.3.3)
     rack (1.4.7)
     rack-cache (1.12.0)
+=======
+    mini_portile2 (2.5.1)
+    multi_json (1.11.0)
+    nokogiri (1.11.4)
+      mini_portile2 (~> 2.5.0)
+      racc (~> 1.4)
+    polyglot (0.3.3)
+    racc (1.5.2)
+    rack (1.4.5)
+    rack-cache (1.2)
+>>>>>>> origin/dependabot/bundler/nokogiri-1.11.4
       rack (>= 0.4)
     rack-protection (1.5.3)
       rack

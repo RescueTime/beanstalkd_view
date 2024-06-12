@@ -5,7 +5,7 @@ require "beanstalkd_view/version"
 Gem::Specification.new do |s|
   s.name        = 'beanstalkd_view'
   s.version     = BeanstalkdView::VERSION
-  s.date        = '2015-05-15'
+  s.date        = '2024-06-12'
   s.summary     = "A Sinatra app to view/manage beanstalkd queues that can be embedded in a Rails app similar to what's available in Resque"
   s.description = "A Sinatra app to view/manage beanstalkd queues that can be embedded in a Rails app similar to what's available in Resque"
   s.authors     = ["Dennis Kuczynski"]
@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.test_files    = Dir.glob("spec/**/*")
   s.require_paths = ["lib"]
 
-  s.add_dependency "sinatra",         "~> 2.2.0"
+  s.add_dependency "sinatra",         "~> 3.2"
   s.add_dependency "beaneater",       "~> 1.1"
   s.add_dependency "vegas",           "~> 0.1.11"
   s.add_dependency "json"
@@ -33,5 +33,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency "capybara", "~> 3.35.3"
   
   # For Rails integration testing
-  s.add_development_dependency "rails", "~> 6.1.7"
+  s.add_development_dependency "rails", "~> 7.0.0"
 end

@@ -30,8 +30,8 @@ Gem::Specification.new do |s|
   s.add_development_dependency "rake", "~> 12.2"
   s.add_development_dependency "rack-test", "~> 0.8.3"
   s.add_development_dependency "rspec"
-  s.add_development_dependency "nokogiri", "~> 1.12.5"
-  s.add_development_dependency "capybara", "~> 3.35.3"
+  s.add_development_dependency "nokogiri", "~> 1.16"
+  s.add_development_dependency "capybara", "~> 3.40"
   
   # For Rails integration testing
   s.add_development_dependency "rails", "~> 7.0.0"

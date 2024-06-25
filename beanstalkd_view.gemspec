@@ -22,6 +22,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.add_dependency "sinatra",         "~> 3.2"
+  s.add_dependency "sinatra-contrib"
   s.add_dependency "beaneater",       "~> 1.1"
   s.add_dependency "vegas",           "~> 0.1.11"
   s.add_dependency "json"

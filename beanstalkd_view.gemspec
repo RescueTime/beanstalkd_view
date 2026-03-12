@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = ">= 2.7.0"
 
-  s.files             = %w( README.md CHANGELOG.md Gemfile Rakefile package.json Gruntfile.js Dockerfile MIT-LICENSE.txt )
+  s.files             = %w( README.md CHANGELOG.md Gemfile Rakefile Dockerfile MIT-LICENSE.txt )
   s.files            += Dir.glob("lib/**/*")
   s.files            += Dir.glob("web/**/*")
   s.files            += Dir.glob("bin/**/*")

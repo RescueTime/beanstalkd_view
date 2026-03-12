@@ -171,6 +171,8 @@ GEM
       date
       stringio
     public_suffix (7.0.5)
+    puma (6.6.1)
+      nio4r (~> 2.0)
     racc (1.8.1)
     rack (3.2.5)
     rack-protection (4.2.1)
@@ -281,6 +283,7 @@ DEPENDENCIES
   beanstalkd_view!
   capybara (~> 3.40)
   nokogiri (~> 1.16)
+  puma (~> 6.0)
   rack-test (~> 2.0)
   rails (~> 8.0)
   rake (~> 13.0)

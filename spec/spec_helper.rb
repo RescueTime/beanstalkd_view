@@ -1,4 +1,3 @@
-require 'rubygems'
 require 'bundler/setup'
 
 require 'capybara/rspec'
@@ -14,9 +13,8 @@ Dir[File.dirname(__FILE__)+"/support/**/*.rb"].each  do |f|
 end
 
 #Capybara.default_driver = :selenium
-  
+
 RSpec.configure do |config|
-  config.treat_symbols_as_metadata_keys_with_true_values = true
   config.filter_run_excluding :requires_beanstalkd
 
   config.before(:each) do

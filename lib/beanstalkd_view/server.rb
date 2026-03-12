@@ -7,11 +7,7 @@ module BeanstalkdView
     root = File.dirname(File.expand_path(__FILE__))
     set :root, root
     set :views, (ENV['BEANSTALKD_VIEW_TEMPLATES'] || "#{root}/views")
-    if respond_to? :public_folder
-      set :public_folder, "#{root}/resources"
-    else
-      set :public, "#{root}/resources"
-    end
+    set :public_folder, "#{root}/resources"
     set :static, true
 
     get "/" do

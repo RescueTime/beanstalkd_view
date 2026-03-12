@@ -1,15 +1,36 @@
 #!/usr/bin/env ruby
 
-$LOAD_PATH.unshift File.expand_path(File.dirname(__FILE__) + '/../lib')
-begin
-  require 'vegas'
-rescue LoadError
-  require 'rubygems'
-  require 'vegas'
-end  
+require 'bundler/setup'
 require 'beanstalkd_view'
+require 'rackup/handler'
+require 'optparse'
 
 ENV['BEANSTALK_URL'] ||= 'beanstalk://localhost/'
 ENV['BEANSTALKD_VIEW_PATH'] ||= '/'
 
-Vegas::Runner.new(Rack::URLMap.new(ENV['BEANSTALKD_VIEW_PATH'] => BeanstalkdView::Server), 'Beanstalkd View')
+options = { port: 5678, host: '0.0.0.0' }
+
+OptionParser.new do |opts|
+  opts.banner = "Usage: beanstalkd_view [options]"
+
+  opts.on("-p", "--port PORT", Integer, "Port to listen on (default: 5678)") do |p|
+    options[:port] = p
+  end
+
+  opts.on("-o", "--host HOST", "Host to bind to (default: 0.0.0.0)") do |h|
+    options[:host] = h
+  end
+
+  opts.on("-h", "--help", "Show this help") do
+    puts opts
+    exit
+  end
+end.parse!
+
+app = Rack::URLMap.new(ENV['BEANSTALKD_VIEW_PATH'] => BeanstalkdView::Server)
+
+puts "Beanstalkd View #{BeanstalkdView::VERSION} starting..."
+puts "Listening on #{options[:host]}:#{options[:port]}"
+puts "Beanstalk URL: #{ENV['BEANSTALK_URL']}"
+
+Rackup::Handler.default.run(app, Host: options[:host], Port: options[:port])

@@ -1,4 +1,4 @@
-source "http://rubygems.org"
+source "https://rubygems.org"
 
 #gem 'beaneater', :git => 'https://github.com/beanstalkd/beaneater.git'
 
